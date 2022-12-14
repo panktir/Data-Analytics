@@ -1,1 +1,1 @@
-# SQL
+Pankti Rana - SQL portfolio
