@@ -1,0 +1,6 @@
+ Netflix Data Analytics
+-- How many movie titles are there in the database? (movies only, not tv shows)
+-- When was the most recent batch of tv shows and/or movies added to the database?
+-- List all the movies and tv shows in alphabetical order.
+-- Who was the Director for the movie Bright Star?
+-- What is the oldest movie in the database and what year was it made?
