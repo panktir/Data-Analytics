@@ -1,0 +1,290 @@
+> install.packages("palmerpenguins")
+Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/palmerpenguins_0.1.1.tar.gz'
+Content type 'application/x-gzip' length 3001167 bytes (2.9 MB)
+==================================================
+downloaded 2.9 MB
+
+* installing *binary* package ‘palmerpenguins’ ...
+* DONE (palmerpenguins)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp4n5Kyv/downloaded_packages’
+> library("palmerpenguins")
+
+
+> skim_without_charts(penguins)
+
+── Data Summary ────────────────────────
+                           Values  
+Name                       penguins
+Number of rows             344     
+Number of columns          8       
+_______________________            
+Column type frequency:             
+  factor                   3       
+  numeric                  5       
+________________________           
+Group variables            None    
+
+── Variable type: factor ────────────────────────────────────────────────────────────
+  skim_variable n_missing complete_rate ordered n_unique top_counts                 
+1 species               0         1     FALSE          3 Ade: 152, Gen: 124, Chi: 68
+2 island                0         1     FALSE          3 Bis: 168, Dre: 124, Tor: 52
+3 sex                  11         0.968 FALSE          2 mal: 168, fem: 165         
+
+── Variable type: numeric ───────────────────────────────────────────────────────────
+  skim_variable     n_missing complete_rate   mean      sd     p0    p25    p50
+1 bill_length_mm            2         0.994   43.9   5.46    32.1   39.2   44.4
+2 bill_depth_mm             2         0.994   17.2   1.97    13.1   15.6   17.3
+3 flipper_length_mm         2         0.994  201.   14.1    172    190    197  
+4 body_mass_g               2         0.994 4202.  802.    2700   3550   4050  
+5 year                      0         1     2008.    0.818 2007   2007   2008  
+     p75   p100
+1   48.5   59.6
+2   18.7   21.5
+3  213    231  
+4 4750   6300  
+5 2009   2009  
+
+
+> glimpse(penguins)
+
+Rows: 344
+Columns: 8
+$ species           <fct> Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, A…
+$ island            <fct> Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, To…
+$ bill_length_mm    <dbl> 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0,…
+$ bill_depth_mm     <dbl> 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2,…
+$ flipper_length_mm <int> 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180…
+$ body_mass_g       <int> 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250,…
+$ sex               <fct> male, female, female, NA, female, male, female, male, NA,…
+$ year              <int> 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 200…
+> head(penguins)
+# A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length…¹ body_…² sex    year
+  <fct>   <fct>              <dbl>         <dbl>            <int>   <int> <fct> <int>
+1 Adelie  Torgersen           39.1          18.7              181    3750 male   2007
+2 Adelie  Torgersen           39.5          17.4              186    3800 fema…  2007
+3 Adelie  Torgersen           40.3          18                195    3250 fema…  2007
+4 Adelie  Torgersen           NA            NA                 NA      NA NA     2007
+5 Adelie  Torgersen           36.7          19.3              193    3450 fema…  2007
+6 Adelie  Torgersen           39.3          20.6              190    3650 male   2007
+# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
+> penguins %>%
++ select(species)
+# A tibble: 344 × 1
+   species
+   <fct>  
+ 1 Adelie 
+ 2 Adelie 
+ 3 Adelie 
+ 4 Adelie 
+ 5 Adelie 
+ 6 Adelie 
+ 7 Adelie 
+ 8 Adelie 
+ 9 Adelie 
+10 Adelie 
+# … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
+
+> penguins %>%
++     select(-species)
+
+# A tibble: 344 × 7
+   island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
+   <fct>              <dbl>         <dbl>             <int>       <int> <fct>  <int>
+ 1 Torgersen           39.1          18.7               181        3750 male    2007
+ 2 Torgersen           39.5          17.4               186        3800 female  2007
+ 3 Torgersen           40.3          18                 195        3250 female  2007
+ 4 Torgersen           NA            NA                  NA          NA NA      2007
+ 5 Torgersen           36.7          19.3               193        3450 female  2007
+ 6 Torgersen           39.3          20.6               190        3650 male    2007
+ 7 Torgersen           38.9          17.8               181        3625 female  2007
+ 8 Torgersen           39.2          19.6               195        4675 male    2007
+ 9 Torgersen           34.1          18.1               193        3475 NA      2007
+10 Torgersen           42            20.2               190        4250 NA      2007
+# … with 334 more rows
+# ℹ Use `print(n = ...)` to see more rows
+
+
+> penguins %>%
++     rename(island_new=island)
+
+# A tibble: 344 × 8
+   species island_new bill_length_mm bill_depth_mm flipper_leng…¹ body_…² sex    year
+   <fct>   <fct>               <dbl>         <dbl>          <int>   <int> <fct> <int>
+ 1 Adelie  Torgersen            39.1          18.7            181    3750 male   2007
+ 2 Adelie  Torgersen            39.5          17.4            186    3800 fema…  2007
+ 3 Adelie  Torgersen            40.3          18              195    3250 fema…  2007
+ 4 Adelie  Torgersen            NA            NA               NA      NA NA     2007
+ 5 Adelie  Torgersen            36.7          19.3            193    3450 fema…  2007
+ 6 Adelie  Torgersen            39.3          20.6            190    3650 male   2007
+ 7 Adelie  Torgersen            38.9          17.8            181    3625 fema…  2007
+ 8 Adelie  Torgersen            39.2          19.6            195    4675 male   2007
+ 9 Adelie  Torgersen            34.1          18.1            193    3475 NA     2007
+10 Adelie  Torgersen            42            20.2            190    4250 NA     2007
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
+
+
+> rename_with(penguins, toupper)
+
+# A tibble: 344 × 8
+   SPECIES ISLAND    BILL_LENGTH_MM BILL_DEPTH_MM FLIPPER_LENGT…¹ BODY_…² SEX    YEAR
+   <fct>   <fct>              <dbl>         <dbl>           <int>   <int> <fct> <int>
+ 1 Adelie  Torgersen           39.1          18.7             181    3750 male   2007
+ 2 Adelie  Torgersen           39.5          17.4             186    3800 fema…  2007
+ 3 Adelie  Torgersen           40.3          18               195    3250 fema…  2007
+ 4 Adelie  Torgersen           NA            NA                NA      NA NA     2007
+ 5 Adelie  Torgersen           36.7          19.3             193    3450 fema…  2007
+ 6 Adelie  Torgersen           39.3          20.6             190    3650 male   2007
+ 7 Adelie  Torgersen           38.9          17.8             181    3625 fema…  2007
+ 8 Adelie  Torgersen           39.2          19.6             195    4675 male   2007
+ 9 Adelie  Torgersen           34.1          18.1             193    3475 NA     2007
+10 Adelie  Torgersen           42            20.2             190    4250 NA     2007
+# … with 334 more rows, and abbreviated variable names ¹​FLIPPER_LENGTH_MM,
+#   ²​BODY_MASS_G
+# ℹ Use `print(n = ...)` to see more rows
+
+
+> rename_with(penguins, tolower)
+
+# A tibble: 344 × 8
+   species island    bill_length_mm bill_depth_mm flipper_lengt…¹ body_…² sex    year
+   <fct>   <fct>              <dbl>         <dbl>           <int>   <int> <fct> <int>
+ 1 Adelie  Torgersen           39.1          18.7             181    3750 male   2007
+ 2 Adelie  Torgersen           39.5          17.4             186    3800 fema…  2007
+ 3 Adelie  Torgersen           40.3          18               195    3250 fema…  2007
+ 4 Adelie  Torgersen           NA            NA                NA      NA NA     2007
+ 5 Adelie  Torgersen           36.7          19.3             193    3450 fema…  2007
+ 6 Adelie  Torgersen           39.3          20.6             190    3650 male   2007
+ 7 Adelie  Torgersen           38.9          17.8             181    3625 fema…  2007
+ 8 Adelie  Torgersen           39.2          19.6             195    4675 male   2007
+ 9 Adelie  Torgersen           34.1          18.1             193    3475 NA     2007
+10 Adelie  Torgersen           42            20.2             190    4250 NA     2007
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
+
+
+> clean_names(penguins)
+
+# A tibble: 344 × 8
+   species island    bill_length_mm bill_depth_mm flipper_lengt…¹ body_…² sex    year
+   <fct>   <fct>              <dbl>         <dbl>           <int>   <int> <fct> <int>
+ 1 Adelie  Torgersen           39.1          18.7             181    3750 male   2007
+ 2 Adelie  Torgersen           39.5          17.4             186    3800 fema…  2007
+ 3 Adelie  Torgersen           40.3          18               195    3250 fema…  2007
+ 4 Adelie  Torgersen           NA            NA                NA      NA NA     2007
+ 5 Adelie  Torgersen           36.7          19.3             193    3450 fema…  2007
+ 6 Adelie  Torgersen           39.3          20.6             190    3650 male   2007
+ 7 Adelie  Torgersen           38.9          17.8             181    3625 fema…  2007
+ 8 Adelie  Torgersen           39.2          19.6             195    4675 male   2007
+ 9 Adelie  Torgersen           34.1          18.1             193    3475 NA     2007
+10 Adelie  Torgersen           42            20.2             190    4250 NA     2007
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
+
+> penguins %>% arrange(bill_length_mm)
+
+# A tibble: 344 × 8
+   species island    bill_length_mm bill_depth_mm flipper_lengt…¹ body_…² sex    year
+   <fct>   <fct>              <dbl>         <dbl>           <int>   <int> <fct> <int>
+ 1 Adelie  Dream               32.1          15.5             188    3050 fema…  2009
+ 2 Adelie  Dream               33.1          16.1             178    2900 fema…  2008
+ 3 Adelie  Torgersen           33.5          19               190    3600 fema…  2008
+ 4 Adelie  Dream               34            17.1             185    3400 fema…  2008
+ 5 Adelie  Torgersen           34.1          18.1             193    3475 NA     2007
+ 6 Adelie  Torgersen           34.4          18.4             184    3325 fema…  2007
+ 7 Adelie  Biscoe              34.5          18.1             187    2900 fema…  2008
+ 8 Adelie  Torgersen           34.6          21.1             198    4400 male   2007
+ 9 Adelie  Torgersen           34.6          17.2             189    3200 fema…  2008
+10 Adelie  Biscoe              35            17.9             190    3450 fema…  2008
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
+
+
+> penguins %>% arrange(-bill_length_mm)
+
+# A tibble: 344 × 8
+   species   island bill_length_mm bill_depth_mm flipper_length…¹ body_…² sex    year
+   <fct>     <fct>           <dbl>         <dbl>            <int>   <int> <fct> <int>
+ 1 Gentoo    Biscoe           59.6          17                230    6050 male   2007
+ 2 Chinstrap Dream            58            17.8              181    3700 fema…  2007
+ 3 Gentoo    Biscoe           55.9          17                228    5600 male   2009
+ 4 Chinstrap Dream            55.8          19.8              207    4000 male   2009
+ 5 Gentoo    Biscoe           55.1          16                230    5850 male   2009
+ 6 Gentoo    Biscoe           54.3          15.7              231    5650 male   2008
+ 7 Chinstrap Dream            54.2          20.8              201    4300 male   2008
+ 8 Chinstrap Dream            53.5          19.9              205    4500 male   2008
+ 9 Gentoo    Biscoe           53.4          15.8              219    5500 male   2009
+10 Chinstrap Dream            52.8          20                205    4550 male   2008
+# … with 334 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
+
+
+> penguins2 <- penguins %>% arrange (-bill_length_mm)
+
+> view(penguins2)
+
+> penguins %>% group_by(island)
+    %>% drop_na() 
+    %>% summarize(mean_bill_length_mm = mean(bill_length_mm))
+
+# A tibble: 3 × 2
+  island    mean_bill_length_mm
+  <fct>                   <dbl>
+1 Biscoe                   45.2
+2 Dream                    44.2
+3 Torgersen                39.0
+> penguins %>% group_by(island) %>% drop_na() %>% summarize(max_bill_length_mm = max(bill_length_mm))
+# A tibble: 3 × 2
+  island    max_bill_length_mm
+  <fct>                  <dbl>
+1 Biscoe                  59.6
+2 Dream                   58  
+3 Torgersen               46  
+
+
+> penguins 
+    %>% group_by(species, island) 
+    %>% drop_na() 
+    %>% summarize (max_bl = max(bill_length_mm), mean_bl = mean(bill_length_mm))
+
+`summarise()` has grouped output by 'species'. You can override using the `.groups`
+argument.
+# A tibble: 5 × 4
+# Groups:   species [3]
+  species   island    max_bl mean_bl
+  <fct>     <fct>      <dbl>   <dbl>
+1 Adelie    Biscoe      45.6    39.0
+2 Adelie    Dream       44.1    38.5
+3 Adelie    Torgersen   46      39.0
+4 Chinstrap Dream       58      48.8
+5 Gentoo    Biscoe      59.6    47.6
+
+> penguins %>% filter(species == "Adelie")
+
+# A tibble: 152 × 8
+   species island    bill_length_mm bill_depth_mm flipper_lengt…¹ body_…² sex    year
+   <fct>   <fct>              <dbl>         <dbl>           <int>   <int> <fct> <int>
+ 1 Adelie  Torgersen           39.1          18.7             181    3750 male   2007
+ 2 Adelie  Torgersen           39.5          17.4             186    3800 fema…  2007
+ 3 Adelie  Torgersen           40.3          18               195    3250 fema…  2007
+ 4 Adelie  Torgersen           NA            NA                NA      NA NA     2007
+ 5 Adelie  Torgersen           36.7          19.3             193    3450 fema…  2007
+ 6 Adelie  Torgersen           39.3          20.6             190    3650 male   2007
+ 7 Adelie  Torgersen           38.9          17.8             181    3625 fema…  2007
+ 8 Adelie  Torgersen           39.2          19.6             195    4675 male   2007
+ 9 Adelie  Torgersen           34.1          18.1             193    3475 NA     2007
+10 Adelie  Torgersen           42            20.2             190    4250 NA     2007
+# … with 142 more rows, and abbreviated variable names ¹​flipper_length_mm,
+#   ²​body_mass_g
+# ℹ Use `print(n = ...)` to see more rows
