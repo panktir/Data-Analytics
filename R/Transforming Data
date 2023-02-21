@@ -1,4 +1,4 @@
-#Here I use the separate(), unite(), mutate() functions to transform data: 
+#Here I use the separate(), unite(), mutate() functions to transform data and use the bias() function to check for biases: 
 
 >id <- c(1:10)
 
@@ -100,3 +100,16 @@ ________________________________________________________________________________
 #   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​body_mass_kg,
 #   ⁶​flipper_length_m
 # ℹ Use `print(n = ...)` to see more rows
+
+________________________________________________________________________________________________________________________________________________
+#example of checking for bias, ideally, it should be as close 0 as possible for unbiased statistic. 
+
+> actual_temp <- c(68.3, 70, 72.4, 71, 67, 70)
+> predicted_temp <- c(67.9, 69, 71.5, 70, 67, 69)
+> bias(actual_temp,predicted_temp)
+[1] 0.7166667   #this result is close to 0, low bias, small overestimate that can be corrected
+
+> actual_sales <- c(150, 203, 137, 247, 116, 287)
+> predicted_sales <- c(200, 300, 150, 250, 150, 300)
+> bias(actual_sales, predicted_sales)
+[1] -35    #negatively biased shows underestimation
