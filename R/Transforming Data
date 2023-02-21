@@ -1,0 +1,102 @@
+#Here I use the separate(), unite(), mutate() functions to transform data: 
+
+>id <- c(1:10)
+
+>name <- c("John Mendes", "Rob Stewart", "Rachel Abrahamson", "Christy Hickman", "Johnson Harper", "Candace Miller", "Carlson Landy", "Pansy Jordan", "Darius Berry", "Claudia Garcia")
+
+>job_title <- c("Professional", "Programmer", "Management", "Clerical", "Developer", "Programmer", "Management", "Clerical", "Developer", "Programmer")
+
+>employee <- data.frame(id, name, job_title)
+
+>print(employee)
+
+  id              name    job_title
+1   1       John Mendes Professional
+2   2       Rob Stewart   Programmer
+3   3 Rachel Abrahamson   Management
+4   4   Christy Hickman     Clerical
+5   5    Johnson Harper    Developer
+6   6    Candace Miller   Programmer
+7   7     Carlson Landy   Management
+8   8      Pansy Jordan     Clerical
+9   9      Darius Berry    Developer
+10 10    Claudia Garcia   Programmer
+
+
+>separate(employee, name, into=c("first_name","last_name"), sep= ' ')
+
+ id first_name  last_name    job_title
+1   1       John     Mendes Professional
+2   2        Rob    Stewart   Programmer
+3   3     Rachel Abrahamson   Management
+4   4    Christy    Hickman     Clerical
+5   5    Johnson     Harper    Developer
+6   6    Candace     Miller   Programmer
+7   7    Carlson      Landy   Management
+8   8      Pansy     Jordan     Clerical
+9   9     Darius      Berry    Developer
+10 10    Claudia     Garcia   Programmer
+
+____________________________________________________________________________________________________________________________________________________________________
+
+>first_names = c('Emma', 'Olivia', 'Ava', 'Sophia', 'Isabella', 'Mia', 'Charlotte', 'Amelia', 'Harper', 'Evelyn')
+
+>last_names = c('Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez')
+
+>job_titles = c('Software Engineer', 'Product Manager', 'Data Analyst', 'Marketing Manager', 'Sales Representative', 'HR Manager', 'Graphic Designer', 'Accountant', 'Web Developer', 'Project Manager')
+
+>employee <- data.frame(id, first_names, last_names, job_titles)
+
+>print(employee)
+
+   id first_names last_names           job_titles
+1   1        Emma      Smith    Software Engineer
+2   2      Olivia    Johnson      Product Manager
+3   3         Ava   Williams         Data Analyst
+4   4      Sophia      Brown    Marketing Manager
+5   5    Isabella      Jones Sales Representative
+6   6         Mia     Garcia           HR Manager
+7   7   Charlotte     Miller     Graphic Designer
+8   8      Amelia      Davis           Accountant
+9   9      Harper  Rodriguez        Web Developer
+10 10      Evelyn   Martinez      Project Manager
+
+>unite(employee,'name', first_names, last_names, sep = ' ')
+
+   id             name           job_titles
+1   1       Emma Smith    Software Engineer
+2   2   Olivia Johnson      Product Manager
+3   3     Ava Williams         Data Analyst
+4   4     Sophia Brown    Marketing Manager
+5   5   Isabella Jones Sales Representative
+6   6       Mia Garcia           HR Manager
+7   7 Charlotte Miller     Graphic Designer
+8   8     Amelia Davis           Accountant
+9   9 Harper Rodriguez        Web Developer
+10 10  Evelyn Martinez      Project Manager
+
+_______________________________________________________________________________________________________________________________________________________________
+#Using the Palmer PEnguins dataset to mutate a few columns 
+
+>View(penguins)
+
+>penguins %>%
++     mutate(body_mass_kg=body_mass_g/1000, flipper_length_m = flipper_length_mm/1000)
+
+# A tibble: 344 × 10
+   species island    bill_lengt…¹ bill_…² flipp…³ body_…⁴ sex    year body_…⁵ flipp…⁶
+   <fct>   <fct>            <dbl>   <dbl>   <int>   <int> <fct> <int>   <dbl>   <dbl>
+ 1 Adelie  Torgersen         39.1    18.7     181    3750 male   2007    3.75   0.181
+ 2 Adelie  Torgersen         39.5    17.4     186    3800 fema…  2007    3.8    0.186
+ 3 Adelie  Torgersen         40.3    18       195    3250 fema…  2007    3.25   0.195
+ 4 Adelie  Torgersen         NA      NA        NA      NA NA     2007   NA     NA    
+ 5 Adelie  Torgersen         36.7    19.3     193    3450 fema…  2007    3.45   0.193
+ 6 Adelie  Torgersen         39.3    20.6     190    3650 male   2007    3.65   0.19 
+ 7 Adelie  Torgersen         38.9    17.8     181    3625 fema…  2007    3.62   0.181
+ 8 Adelie  Torgersen         39.2    19.6     195    4675 male   2007    4.68   0.195
+ 9 Adelie  Torgersen         34.1    18.1     193    3475 NA     2007    3.48   0.193
+10 Adelie  Torgersen         42      20.2     190    4250 NA     2007    4.25   0.19 
+# … with 334 more rows, and abbreviated variable names ¹​bill_length_mm,
+#   ²​bill_depth_mm, ³​flipper_length_mm, ⁴​body_mass_g, ⁵​body_mass_kg,
+#   ⁶​flipper_length_m
+# ℹ Use `print(n = ...)` to see more rows
