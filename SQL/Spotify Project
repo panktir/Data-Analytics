@@ -1,0 +1,12 @@
+/* TOP 10 artists */
+SELECT track_name, artist_name, popularity
+FROM BIT_DB.Spotifydata
+ORDER BY popularity desc
+LIMIT 10
+
+/* Top artists and number of songs each artist has */
+SELECT artist_name, COUNT(track_name)
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY COUNT(track_name) desc
+LIMIT 5 
