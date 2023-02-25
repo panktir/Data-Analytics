@@ -10,3 +10,17 @@ FROM BIT_DB.Spotifydata
 GROUP BY artist_name
 ORDER BY COUNT(track_name) desc
 LIMIT 5 
+
+/* Average popularity for artists + Label 'Top Star' for artists with average popularity 90 or above */
+WITH popularity_average_CTE AS (
+SELECT artist_name,
+AVG(popularity) AS average_popularity
+FROM SpotifyData 
+GROUP BY artist_name
+)
+ 
+SELECT  artist_name,
+        average_popularity,
+        'Top Star' AS tag
+FROM popularity_average_CTE
+WHERE average_popularity>=90;
