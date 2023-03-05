@@ -1,1 +1,11 @@
+# Load required packages
+>library(palmerpenguins)
+>library(ggplot2)
 
+# Create scatter plot of body mass vs bill depth for Adelie penguins
+>ggplot(data = filter(penguins, species == "Adelie")) +
+  aes(x = body_mass_g, y = bill_depth_mm) +
+  geom_point() +
+  ggtitle("Adelie Penguins: Body Mass vs. Bill Depth") +
+  xlab("Body Mass (g)") +
+  ylab("Bill Depth (mm)")
