@@ -1,4 +1,4 @@
-# Project Description
+# Exploring 100+ Years of US Baby Names
 
 ## Purpose
 The purpose of this project is to explore and analyze 100+ years of US baby names data using R Studio in Gitpod. By examining naming trends, letter popularity, letter combinations, and usage of vowels and consonants, we aim to gain insights into the cultural and linguistic aspects of names over time.
