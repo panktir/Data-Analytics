@@ -10,7 +10,7 @@ The project is divided into two parts:
 [Part 2: Survival Analysis with Actuarial Life Tables](https://github.com/panktir/corise-r-for-ds/blob/main/projects/project-02/project-02-estimate-age-from-name.md)
 
 ## Project Tasks
-During this project, I leveraged R Studio in Gitpod to perform a comprehensive exploration and analysis of 100+ years of US baby names data. Here is an overview of the main tasks I accomplished:
+During this project, I used R Studio in Gitpod to perform a comprehensive exploration and analysis of 100+ years of US baby names data. Here is an overview of the main tasks I accomplished:
 
 1. **Data Import and Preparation:** Imported the dataset from data/names.csv.gz using the read_csv function from the readr package. Prepared the data for analysis by cleaning, transforming, and structuring it in a suitable format.
 
