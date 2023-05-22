@@ -1,4 +1,4 @@
-##Airbnb Dataset Analysis and Visualization
+# Airbnb Dataset Analysis and Visualization
 This project, implemented in Python using Google Colab, focuses on analyzing and visualizing the Airbnb dataset. The dataset contains information about various Airbnb listings in Amsterdam. The goal of this project is to process the dataset, perform calculations, and create an interactive app for visualizing the data geographically.
 
 Project Overview
