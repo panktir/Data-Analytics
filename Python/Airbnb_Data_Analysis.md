@@ -14,16 +14,16 @@ This project, implemented in Python using Google Colab, focuses on analyzing and
 * Visualizing the dataset using Streamlit
 
 ## Project Tasks
-1. Data preprocessing: The dataset is downloaded and processed to ensure proper formatting and eliminate irrelevant information.
-2. Cleaning and transformation: Unnecessary rows and columns are removed, and the dataset is rearranged to its original format.
-3. Data validation: String characters are filtered out, and the dataset is verified to contain only numerical values.
-4. Currency conversion: Prices are converted from US dollars to a chosen currency using appropriate calculations.
-5. Inflation adjustment: Prices are adjusted based on the annual inflation rate of the chosen currency.
-6. Data type conversion: The dataset is transformed to enable numerical operations by changing the data type to float32.
-7. Geographical analysis: A preferred location in Amsterdam is selected, and the distances between this location and available Airbnb listings are calculated.
-8. Optimization with NumPy: The distance calculation function is converted into a pure NumPy function for improved efficiency.
-9. Performance evaluation: Execution time is measured using the timeit function to compare the optimized NumPy implementation with the previous version.
-10. Visualization: The dataset is visualized using Streamlit, displaying prices, locations, and color-coding based on category.
+1. **Data preprocessing:** The dataset is downloaded and processed to ensure proper formatting and eliminate irrelevant information.
+2. **Cleaning and transformation:** Unnecessary rows and columns are removed, and the dataset is rearranged to its original format.
+3. **Data validation:** String characters are filtered out, and the dataset is verified to contain only numerical values.
+4. **Currency conversion:** Prices are converted from US dollars to a chosen currency using appropriate calculations.
+5. **Inflation adjustment:** Prices are adjusted based on the annual inflation rate of the chosen currency.
+6. **Data type conversion:** The dataset is transformed to enable numerical operations by changing the data type to float32.
+7. **Geographical analysis:** A preferred location in Amsterdam is selected, and the distances between this location and available Airbnb listings are calculated.
+8. **Optimization with NumPy:** The distance calculation function is converted into a pure NumPy function for improved efficiency.
+9. **Performance evaluation:** Execution time is measured using the timeit function to compare the optimized NumPy implementation with the previous version.
+10. **Visualization:** The dataset is visualized using Streamlit, displaying prices, locations, and color-coding based on category.
 
 ## Technologies and Libraries Used
 * Python
