@@ -1,7 +1,7 @@
 # Airbnb Dataset Analysis and Visualization
 This project, implemented in Python using Google Colab, focuses on analyzing and visualizing the Airbnb dataset. The dataset contains information about various Airbnb listings in Amsterdam. The goal of this project is to process the dataset, perform calculations, and create an interactive app for visualizing the data geographically.
 
-* [Project Code](https://colab.research.google.com/drive/1QZ-y2DTPlGMRCGjUYVV5F-7G4c7WSCMr#scrollTo=7G3KvDaeF9YD)  
+* [Project Code - Colab](https://colab.research.google.com/drive/1QZ-y2DTPlGMRCGjUYVV5F-7G4c7WSCMr#scrollTo=7G3KvDaeF9YD)  
 * [Streamlit app](https://panktir-airbnb-ds-streamlit-app-9qu9wu.streamlit.app/)
 
 ## Project Overview
