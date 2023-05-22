@@ -3,6 +3,11 @@
 ## Purpose
 The purpose of this project is to explore and analyze 100+ years of US baby names data using R Studio in Gitpod. By examining naming trends, letter popularity, letter combinations, and usage of vowels and consonants, we aim to gain insights into the cultural and linguistic aspects of names over time.
 
+The project is divided into two parts:
+
+[Part 1: Exploring Baby Names](https://github.com/panktir/corise-r-for-ds/blob/main/projects/project-01/project-01-explore-babynames.md)
+[Part 2: Survival Analysis with Actuarial Life Tables](https://github.com/panktir/corise-r-for-ds/blob/main/projects/project-02/project-02-estimate-age-from-name.md)
+
 ## Project Tasks
 During this project, I leveraged R Studio in Gitpod to perform a comprehensive exploration and analysis of 100+ years of US baby names data. Here is an overview of the main tasks I accomplished:
 
