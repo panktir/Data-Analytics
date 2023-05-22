@@ -26,10 +26,10 @@ This project, implemented in Python using Google Colab, focuses on analyzing and
 10. Visualization: The dataset is visualized using Streamlit, displaying prices, locations, and color-coding based on category.
 
 ## Technologies and Libraries Used
-*Python
-*Google Colab
-*NumPy
-*Streamlit
+* Python
+* Google Colab
+* NumPy
+* Streamlit
 This project showcases proficiency in data preprocessing, cleaning, calculations, currency conversion, and geographical visualization using Python. The final result is an interactive app that allows users to explore the Airbnb dataset in Amsterdam visually.
 
 [Streamlit app](https://panktir-data-analytics-streamlit-app-abts2t.streamlit.app/)
