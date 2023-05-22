@@ -1,9 +1,9 @@
-## Project Description
+# Project Description
 
-# Purpose
+## Purpose
 The purpose of this project is to explore and analyze 100+ years of US baby names data using R Studio in Gitpod. By examining naming trends, letter popularity, letter combinations, and usage of vowels and consonants, we aim to gain insights into the cultural and linguistic aspects of names over time.
 
-# Project Tasks
+## Project Tasks
 During this project, I leveraged R Studio in Gitpod to perform a comprehensive exploration and analysis of 100+ years of US baby names data. Here is an overview of the main tasks I accomplished:
 
 1. **Data Import and Preparation:** Imported the dataset from data/names.csv.gz using the read_csv function from the readr package. Prepared the data for analysis by cleaning, transforming, and structuring it in a suitable format.
@@ -20,7 +20,7 @@ During this project, I leveraged R Studio in Gitpod to perform a comprehensive e
 
 7. **Visualization and Reporting:** Created visually appealing and informative plots using the ggplot2 package to present the findings of each analysis. Generated clear and concise reports to communicate the insights derived from the data.
 
-# Technologies and Libraries Used
+## Technologies and Libraries Used
 Throughout this project, I utilized the following technologies and libraries:
 
 **R Studio:** Integrated development environment (IDE) for R programming.
