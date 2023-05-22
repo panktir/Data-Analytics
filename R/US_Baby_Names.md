@@ -6,6 +6,7 @@ The purpose of this project is to explore and analyze 100+ years of US baby name
 The project is divided into two parts:
 
 [Part 1: Exploring Baby Names](https://github.com/panktir/corise-r-for-ds/blob/main/projects/project-01/project-01-explore-babynames.md)
+
 [Part 2: Survival Analysis with Actuarial Life Tables](https://github.com/panktir/corise-r-for-ds/blob/main/projects/project-02/project-02-estimate-age-from-name.md)
 
 ## Project Tasks
