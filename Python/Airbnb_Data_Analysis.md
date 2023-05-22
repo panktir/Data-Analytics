@@ -2,13 +2,13 @@
 This project, implemented in Python using Google Colab, focuses on analyzing and visualizing the Airbnb dataset. The dataset contains information about various Airbnb listings in Amsterdam. The goal of this project is to process the dataset, perform calculations, and create an interactive app for visualizing the data geographically.
 
 ## Project Overview
-*Downloading and preprocessing the dataset
-*Cleaning the data and transforming it into a suitable format
-*Performing calculations and currency conversion
-*Adjusting prices for inflation
-*Selecting a preferred location in Amsterdam
-*Calculating the distance between the preferred location and available Airbnb listings
-*Visualizing the dataset using [Streamlit app](https://panktir-data-analytics-streamlit-app-abts2t.streamlit.app/)
+* Downloading and preprocessing the dataset
+* Cleaning the data and transforming it into a suitable format
+* Performing calculations and currency conversion
+* Adjusting prices for inflation
+* Selecting a preferred location in Amsterdam
+* Calculating the distance between the preferred location and available Airbnb listings
+* Visualizing the dataset using [Streamlit app](https://panktir-data-analytics-streamlit-app-abts2t.streamlit.app/)
 
 ## Project Tasks
 1. Data preprocessing: The dataset is downloaded and processed to ensure proper formatting and eliminate irrelevant information.
