@@ -1,4 +1,6 @@
- Customer & Order Data Querying
+# Customer & Order Data Querying
+
+## This SQL project focuses on analyzing sales data from a company's database. The purpose of the project is to extract valuable insights about the sales patterns and performance of different products during specific periods.
 
 --How many orders were placed in January?
   SELECT COUNT(orderID) FROM BIT_DB.JanSales
